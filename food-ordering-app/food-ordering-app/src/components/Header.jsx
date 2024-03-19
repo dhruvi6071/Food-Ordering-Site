@@ -8,7 +8,7 @@ export default function Header() {
 
         </div>
         <nav>
-            <button></button>
+            <button>Wish to Eat!</button>
         </nav>
     </header>
 }
