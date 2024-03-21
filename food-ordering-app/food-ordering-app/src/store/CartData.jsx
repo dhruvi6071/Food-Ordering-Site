@@ -58,17 +58,13 @@ function cartReducer(state, action) {
 //This function will do the actual data management and state management.
 function CartContextProvider({ children }) {
   const [cart, dispatchCartAction] = useReducer(cartReducer, { item: [] }); //This is also a hook that needed to manage the states but it convert complex task into comparatively simple.
-  
-  const cartContext = {
-    items: cart.item
-  };
 
   function addItem(item) {
-    dispatchCartAction({type: 'ADD_ITEM', item)
+    dispatchCartAction({type: 'ADD_ITEM', item});
   }
    
   function removeItem(id) {
-    dispatchCartAction({type: 'REMOVE_ITEM', id})
+    dispatchCartAction({type: 'REMOVE_ITEM', id});
   }
 
   const cartContext = {
