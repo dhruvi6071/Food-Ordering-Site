@@ -4,14 +4,15 @@ import CartContext from "../store/CartContext";
 import { useContext } from "react";
 import UserProgressContext from "../store/UserProgressContext.jsx";
 export default function Header() {
-  const CartCtx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
 
-  const totalCartItems = CartCtx.items.reduce((totalNumberOfItem, item) => {
+  const totalCartItems = cartCtx.items.reduce((totalNumberOfItem, item) => {
     return totalNumberOfItem + item.quantity;
   }, 0);
 
   function handleShowCart() {
+
     userProgressCtx.showCart();
   }
 
@@ -22,7 +23,7 @@ export default function Header() {
         <h1>Moody Foody</h1>
       </div>
       <nav>
-        <Button textOnly onclick={handleShowCart}>
+        <Button textOnly onClick={handleShowCart}>
           Wish to Eat!({totalCartItems})
         </Button>
       </nav>
