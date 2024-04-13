@@ -1,5 +1,5 @@
 import logo from '../assets/logo.jpg';
-
+import Button from './UI/Button';
 export default function Header() {
   return (
     <header id="main-header">
@@ -8,7 +8,7 @@ export default function Header() {
         <h1>Foody Moody</h1>
       </div>
       <nav>
-        <button>Wishlist(0)</button>
+        <Button textOnly>Wishlist(0)</Button>
       </nav>
     </header>
   );
