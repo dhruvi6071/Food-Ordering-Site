@@ -21,11 +21,11 @@ function cartReducer(state, action) {
 
     if (existingCartItemIndex > -1) {
       const existingItem = state.items[existingCartItemIndex];
-      const updatedItems = {
+      const updatedItem = {
         ...existingItem, // Item exist kare chhe aetle ... thi spread thai ne badho data aavi jase.
         quantity: existingItem.quantity + 1,
       };
-      updatedItems[existingCartItemIndex] = updatedItems;
+      updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems.push({ ...action.item, quantity: 1 }); // item already chhe nai list ma aetle push kari dese item ne.
     }
