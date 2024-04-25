@@ -2,6 +2,7 @@
 // import { useEffect } from "react";
 import MealItem from "./MealItem";
 import useHttp from "./hooks/usehttp";
+import Error from "./Error";
 
 // import Button from "./UI/Button";
 
@@ -14,28 +15,14 @@ export default function Meals() {
     error,
   } = useHttp("http://localhost:3000/meals", requestConfig, []);
 
-
   console.log(loadMeals);
 
-  // const [loadMeals, setLoadMeals] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchMeals() {
-  //     const response = await fetch("http://localhost:3000/meals");
-
-  //     if (!response.ok) {
-  //       //...
-  //     }
-  //     //To convert data from backend into jsx method we must need to add .json method.
-  //     const meals = await response.json();
-
-  //     setLoadMeals(meals);
-  //   }
-  //   fetchMeals();
-  // }, []);
-
   if(isLoading){
-    return <p>Fetching meals...</p>
+    return <p className="center">Fetching meals...</p>
+  }
+
+  if(error){
+    return <Error title="Failed to fetch meals" message={error}></Error>
   }
 
   // if(!data) {
