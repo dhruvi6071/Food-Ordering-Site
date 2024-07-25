@@ -1,7 +1,7 @@
 // import { useState } from "react";
 // import { useEffect } from "react";
 import MealItem from "./MealItem";
-import useHttp from "./hooks/usehttp";
+import useHttp from "./hooks/useHttp";
 import Error from "./Error";
 
 // import Button from "./UI/Button";
